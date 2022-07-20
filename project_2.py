@@ -6,7 +6,7 @@ Veri setine göre uzun soluklu filmler hangi dilde oluşturulmuştur? Görselle�
 'Hindi' Dilinde çekilmiş olan filmlerin ortalama 'runtime' suresi nedir?
 'Genre' Sütunu kaç kategoriye sahiptir ve bu kategoriler nelerdir? Görselleştirerek ifade ediniz.
 Veri setinde bulunan filmlerde en çok kullanılan 3 dili bulunuz.
-IMDB puanı en yüksek olan ilk 10 film hangileridir?
+IMDB puanı en yüksek olan ilk 10 film hangileridir?  
 IMDB puanı ile 'Runtime' arasında nasıl bir korelasyon vardır? İnceleyip görselleştiriniz.
 IMDB Puanı en yüksek olan ilk 10 'Genre' hangileridir? Görselleştiriniz.
 'Runtime' değeri en yüksek olan ilk 10 film hangileridir? Görselleştiriniz.
@@ -37,6 +37,8 @@ print(corra)
 sns.regplot(x=df['IMDB_Score'], y=df['Runtime'])
 plt.show()
 
+#Hangi yılın toplam "runtime" süresi en fazladır?(Beyza)
+df.groupby("Premiere").agg({"Runtime": "sum"}).sort_values(by="Runtime", ascending=False)[0:1]
 
 """ 
 #IMDP Puanı yüksek olan 10 film.
